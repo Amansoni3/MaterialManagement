@@ -1,0 +1,131 @@
+<style type="text/css">
+    .myframe{
+        margin-top:30px ;
+        width:600px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#ced6e0;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/Javascript/FillState.js"></script>
+<script src="/static/Javascript/Issue.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Management[Issue Interface]</title>
+</head>
+
+<form action="/submitissuerecord">
+
+<body style="background-color:#ced6e0">
+
+<div class="root">
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/Issue.png" width="40">&nbsp;
+          Issue Interface
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Employee Id</label>
+            <input type="text" class="form-control" name="employeid" id="employeid">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Category Id</label>
+          <select class="form-control" name="categoryid" id="categoryid">
+              <option>--Select Category--</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Sub Category Id</label>
+          <select class="form-control" name="subcategoryid" id="subcategoryid">
+              <option></option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Product Id</label>
+          <select class="form-control" name="productid" id="productid">
+              <option></option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Final Product Id</label>
+          <select class="form-control" name="finalproductid" id="finalproductid">
+              <option></option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Demand Employee ID</label>
+          <select type="text" class="form-control" name="demandemployeid" id="demandemployeid">
+              <option>--Select Demand Employee--</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Issue Date</label>
+            <input type="date" class="form-control" name="issuedate" id="issuedate">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Quantity Issue</label>
+            <input type="text" class="form-control" name="quantityissue" id="quantityissue">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Remarks</label>
+            <input type="text" class="form-control" name="remark" id="remark">
+      </div>
+
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" class="btn btn-primary w-100">Save</button>
+          </div>
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center">
+              <button type="reset" class="btn btn-danger w-100">Reset</button>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center; font-size:18px;font-weight: bold;">
+              {{ msg }}
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>

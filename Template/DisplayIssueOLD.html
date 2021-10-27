@@ -1,0 +1,83 @@
+<style type="text/css">
+    .myframe{
+        margin-top:40px ;
+        width:80%;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#222f3e;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Management[Display All Issue]</title>
+</head>
+
+<body style="background-color: #222f3e">
+
+<div class="root">
+
+  <div class="myFrame">
+
+  <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 20px;letter-spacing: 2px">
+          <img src="/static/Issue.png" width="40">
+           Display All Issues
+      </div>
+
+<table class="table">
+
+  <thead class="thead-dark">
+
+    <tr>
+        <th>Employee Id</th>
+        <th>Category</th>
+        <th>Sub Category</th>
+      <th>Product</th>
+        <th>Final Product</th>
+        <th>Demand Employee</th>
+        <th>Issue Date</th>
+        <th>Quantity Issue</th>
+        <th>Remarks</th>
+
+    </tr>
+
+  </thead>
+
+{% for row in rows %}
+
+    <tr>
+      <td>{{ row.1 }}</td>
+        <td>[{{ row.2 }}]&nbsp;{{ row.12 }}</td>
+        <td>[{{ row.3 }}]&nbsp;{{ row.13 }}</td>
+        <td>[{{ row.4 }}]&nbsp;{{ row.14 }}</td>
+        <td>[{{ row.5 }}]&nbsp;{{ row.15 }}</td>
+        <td>[{{ row.6 }}]&nbsp;{{ row.10 }}&nbsp;{{ row.11 }}</td>
+        <td>{{ row.7 }}</td>
+         <td>{{ row.8 }}</td>
+        <td>{{ row.9 }}</td>
+    </tr>
+
+
+
+{% endfor %}
+
+</table>
+  </div>
+</div>
+</body>
+</html>

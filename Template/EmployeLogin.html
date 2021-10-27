@@ -1,0 +1,97 @@
+<style type="text/css">
+    .myframe{
+
+        margin-top:70px;
+        width:400px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+
+
+
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#f1f2f6;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Management[Employee Login]</title>
+</head>
+
+<form action="/checkemployelogin" method="post" enctype="application/x-www-form-urlencoded"> {% csrf_token %}
+
+<body style="background-color:#f1f2f6 ">
+
+<div class="root">
+
+    <div class="row" style="display: flex;align-content: center; margin-top: 65px;width: 50%; margin-left: 100px">
+
+        <div class="col">
+            <img src="/static/material.png" width="80%" style="border-radius: 10px;margin-left: 50px">
+        </div>
+    </div>
+
+
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 20px;letter-spacing: 2px;justify-content: center">
+          <img src="/static/adminlogin.png" width="30">
+          &nbsp;<label style="font-family: Forte">Employee Login</label>
+      </div>
+
+      <div class="form-group" style="margin-inside: 10px; margin-top: 20px">
+
+        <label for="formGroupExampleInput">Employee User</label>
+          <i class="fas fa-user-shield"></i><input type="email" name="emailid" class="form-control">
+
+      </div>
+
+
+       <div class="form-group">
+
+        <label for="formGroupExampleInput">Password</label>
+          <i class="fas fa-key"></i><input type="password" name="password" class="form-control">
+
+       </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" class="btn btn-primary w-100">Login</button>
+          </div>
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+             <b>{{ msg }}</b>
+          </div>
+      </div>
+
+
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>

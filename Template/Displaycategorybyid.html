@@ -1,0 +1,95 @@
+<style type="text/css">
+    .myframe{
+        margin-top:80px ;
+        width:600px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#222f3e;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/Javascript/FillState.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Management[Category Interface]</title>
+</head>
+
+<form action="/EditDeleteCategory">
+
+<input type="hidden" value="{{ row.0 }}" name="categoryid">
+
+<body style="background-color:#222f3e ">
+
+<div class="root">
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/categories.jpg" width="40">
+          Categories Interface
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Categories Name</label>
+            <input type="text" value="{{ row.1 }}" class="form-control" name="CN">
+      </div>
+
+      <!--<div class="form-group">
+        <label for="formGroupExampleInput2">Choose Categories Picture</label>
+        <input type="file"  id="picture" accept="image/*" name="picture" class="form-control">
+      </div> -->
+
+      <div class="row gap">
+
+          <div class="col row" style="display:flex; flex-direction: column; align-items: center;">
+              &nbsp;<img src="/static/CategoryImages/{{ row.2 }}" id="pic" class="img-thumbnail" width="100" height="100"/>
+          </div>
+
+      </div>
+
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" name="button" value="EDIT" class="btn btn-primary w-100">EDIT</button>
+          </div>
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center">
+              <button type="submit" name="button" value="DELETE" class="btn btn-danger w-100">DELETE</button>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center; font-size:18px;font-weight: bold;">
+              {{ msg }}
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>

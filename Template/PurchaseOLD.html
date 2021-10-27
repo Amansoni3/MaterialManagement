@@ -1,0 +1,140 @@
+<style type="text/css">
+    .myframe{
+        margin-top:80px ;
+        width:1000px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#222f3e;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/Javascript/Purchase.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Management[Purchase]</title>
+</head>
+
+<form action="/submitpurchaserecord">
+
+<body style="background-color:#222f3e ">
+
+<div class="root">
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/purchase.png" width="40">
+          Purchase Details
+      </div>
+
+      <div class="row gap">
+
+          <div class="col">
+              <select name="categoryid" id="catid" class="form-control" placeholder="Category">
+                  <option>--Select Category--</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <select name="subcategoryid" id="subcatid" class="form-control" placeholder="Sub Category">
+                  <option>--Select Sub Category--</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <select name="productid" id="productid" class="form-control" placeholder="Product">
+                  <option>--Select Product--</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <select name="finalproductid" id="finalproductid" class="form-control" placeholder="Final Product">
+                  <option>--Select Final Product--</option>
+              </select>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col">
+              <label for="formGroupExampleInput" style="font-weight: bold">Purchase Date</label>
+              <input type="date" class="form-control" name="datepurchase" id="datepurchase" placeholder="yy-mm-dd">
+          </div>
+
+          <div class="col">
+              <label for="formGroupExampleInput" style="font-weight: bold">Supplier Name</label>
+              <select name="supplierid" id="supplierid" class="form-control">
+                  <option>--Select Supplier--</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <label for="formGroupExampleInput" style="font-weight: bold">Employee Id</label>
+              <input type="text" name="employeid" id="employeid" class="form-control">
+          </div>
+
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col">
+              <label for="formGroupExampleInput" style="font-weight: bold">Stock</label>
+              <input type="text" class="form-control" name="stock" id="stock">
+          </div>
+
+          <div class="col">
+              <label for="formGroupExampleInput" style="font-weight: bold">Amount</label>
+              <input type="text" name="amount" id="amount" class="form-control">
+          </div>
+
+      </div>
+
+
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" class="btn btn-primary w-100">Save</button>
+          </div>
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center">
+              <button type="reset" class="btn btn-danger w-100">Reset</button>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center; font-size:18px;font-weight: bold;">
+              {{ msg }}
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>

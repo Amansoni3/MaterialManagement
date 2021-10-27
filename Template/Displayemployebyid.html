@@ -1,0 +1,165 @@
+<style type="text/css">
+    .myframe{
+        margin-top:50px ;
+        width:600px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#222f3e;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/Javascript/FillState.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Management[Update/Delete Record]</title>
+</head>
+
+<form action="/EditDeleteRecord">
+
+<input type="hidden" value="{{ row.0 }}" name="empid">
+
+<body style="background-color:#222f3e ">
+
+<div class="root">
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/employe.jpg" width="40">
+          Edit or Delete Employe Details
+      </div>
+
+      <div class="row">
+
+          <div class="col">
+              <input type="text" value="{{ row.1 }}" name="firstname" class="form-control" placeholder="First Name">
+          </div>
+
+          <div class="col">
+              <input type="text" value="{{ row.2 }}" name="lastname" class="form-control" placeholder="Last Name">
+          </div>
+
+      </div>
+
+      <div class="row gap">
+          {% ifequal row.3 "Male" %}
+
+          <div class="col" style="display: flex; align-items: center;justify-content: center;" >
+              <input type="radio" checked value="Male" name="gender" > <i class="fas fa-male" style="margin-right: 20px; margin-left: 10px; font-size: 30px; color: darkviolet" ></i>
+              <input type="radio" value="Female" name="gender" > <i class="fas fa-female" style="margin-right: 20px; margin-left: 10px; font-size: 30px; color: deeppink"></i>
+          </div>
+          {% endifequal %}
+
+          {% ifequal row.3 "Female" %}
+
+          <div class="col" style="display: flex; align-items: center;justify-content: center;" >
+              <input type="radio" value="Male" name="gender" > <i class="fas fa-male" style="margin-right: 20px; margin-left: 10px; font-size: 30px; color: darkviolet" ></i>
+              <input type="radio" checked value="Female" name="gender" > <i class="fas fa-female" style="margin-right: 20px; margin-left: 10px; font-size: 30px; color: deeppink"></i>
+          </div>
+          {% endifequal %}
+
+          <div class="col">
+              <input type="date" value="{{ row.4 }}" name="dob" class="form-control" placeholder="Birth Date">
+          </div>
+
+      </div>
+
+      <div class="row gap">
+          <div class="col">
+          <input type="text" value="{{ row.5 }}" class="form-control" name="paddress" placeholder="Permanent Address" >
+          </div>
+      </div>
+
+      <div class="row gap">
+
+          <div class="col">
+              <select name="state" id="state" class="form-control" placeholder="-State-">
+                  <option value="{{ row.6 }}">{{ row.15 }}</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <select type="text" id="city" name="city" class="form-control" placeholder="-City-">
+                  <option value="{{ row.7 }}">{{ row.14 }}</option>
+              </select>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+          <div class="col">
+          <input type="text" value="{{ row.8 }}" class="form-control" name="caddress" placeholder="Current Address" >
+          </div>
+      </div>
+
+
+      <div class="row gap">
+
+          <div class="col">
+              <input type="email" value="{{ row.9 }}" name="email" class="form-control" placeholder="Email Address">
+          </div>
+
+          <div class="col">
+              <input type="text" value="{{ row.10 }}" name="mnumber" class="form-control" placeholder="Mobile Number">
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col">
+              <input type="text" value="{{ row.11 }}" name="designation" class="form-control" placeholder="Designation">
+          </div>
+
+          <div class="col" style="display:flex; flex-direction: row; align-items: center; justify-content: center;">
+
+              &nbsp;<img src="/static/{{ row.12 }}" id="pic" height="120" width="100"/>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" name="button" value="EDIT" class="btn btn-primary w-100">Edit Record</button>
+          </div>
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center">
+              <button type="submit" name="button" value="DELETE" class="btn btn-danger w-100">Delete Record</button>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center; font-size:18px;font-weight: bold;">
+              {{ msg }}
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>
